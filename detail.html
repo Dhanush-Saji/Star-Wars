@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/04cd54677b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Star Wars</title>
+    <style>
+        *{
+            font-family: Poppins;
+        }
+        body{
+            background-color: #110b0b;
+        }
+        .data{
+            background-color: #2e2f31;
+            margin: auto;
+            width: 700px;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        table{
+            width: 500px;
+            margin: auto;
+        }
+        td{
+            text-align: center;
+        }
+        tr{
+            color: white;
+        }
+        tbody > tr > td{
+            padding: 10px;
+            border: 1px solid #4c4c4d;
+            margin-bottom: 5px;
+        }
+        tbody > tr:nth-child(1) > td{
+            font-size: 50px;
+            font-weight: 500;
+            border: none;
+        }
+        .round{
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 100px 100px;
+            background-color: #ffeb00;
+        }
+        .icon{
+            display: flex;
+            justify-content: flex-end;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="data">
+        <div class="icon">
+
+            <div class="round">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+        </div>
+        <table>
+            <thead>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+<script>
+    let arr = JSON.parse(localStorage.getItem("details")) || [];
+    display(arr)
+    function display(arr){
+        document.querySelector("tbody").innerHTML = "";
+        arr.forEach(function(ele){
+            let tr1 = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.innerText = ele.name;
+            tr1.append(td1);
+            let tr2 = document.createElement("tr");
+            let td2 = document.createElement("td");
+            td2.innerText = `Gender : ${ele.gender}`;
+            tr2.append(td2);
+            let tr3 = document.createElement("tr");
+            let td3 = document.createElement("td");
+            td3.innerText = `Birth year : ${ele.birth_year}`;
+            tr3.append(td3);
+            let tr4 = document.createElement("tr");
+            let td4 = document.createElement("td");
+            td4.innerText = `Mass : ${ele.mass}`;
+            tr4.append(td4);
+            let tr5 = document.createElement("tr");
+            let td5 = document.createElement("td");
+            td5.innerText = `Height : ${ele.height}`;
+            tr5.append(td5);
+            document.querySelector("tbody").append(tr1,tr2,tr3,tr4,tr5)
+        })
+        
+    }
+    document.querySelector(".round").addEventListener("click",()=>{
+        arr = [];
+    localStorage.setItem("details",JSON.stringify(arr));
+        window.location.href = "index.html"
+    })
+</script> 
+</body>
+</html>

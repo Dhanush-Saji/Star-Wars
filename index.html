@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/04cd54677b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Star Wars</title>
+    <style>
+        *{
+            font-family: Poppins;
+        }
+        body{
+            background-color: #110b0b;
+        }
+        .input{ 
+            justify-content: space-between;
+            display: flex;
+            background-color: #2e2f31;
+            min-width: 200px;
+            width: 500px;
+            padding: 15px 20px;
+            border-radius: 20px;
+            border: none;
+        }
+        input{
+            background-color: #2e2f31;
+            width: 250px;
+            border: none;
+            color: white;
+        }
+        input:focus{
+            outline: none;
+        }
+        img{
+            width: 200px;
+            margin-top: 200px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+        }
+        .round{
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 100px 100px;
+            background-color: #ffeb00;
+        }
+        .results{
+            color: white;
+            text-align: left;
+        }
+        .list{
+            padding: 5px 50px;
+            border: 1px solid #2e2f31;
+            min-width: 200px;
+            width: 350px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+        .list:hover{
+            background-color: #38383a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.im.ge/2022/08/07/FRTOsc.download-1.png" alt="error" />
+        <div class="input">
+            <input type="text" placeholder="Search characters" id="input" oninput="debouncing(loadData,1000)">
+            <div class="round">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+        </div>
+        <div class="results">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
